@@ -1,0 +1,32 @@
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a routerLink="/" class="navbar__brand" (click)="closeMenu()"><img src="https://prium.github.io/Posh/v2.1.0/assets/images/posh-logo.png" alt="Posh-Logo"class="navbar__brand"></a>
+
+    <nav class="navbar__links" [class.navbar__links--open]="isOpen()">
+      @for (link of navLinks; track link.path + link.label) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          (click)="closeMenu()"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      [attr.aria-expanded]="isOpen()"
+      aria-label="Toggle navigation menu"
+      (click)="toggleMenu()"
+    >
+      @if (isOpen()) {
+        <span>&#10005;</span>
+      } @else {
+        <span>&#9776;</span>
+      }
+    </button>
+  </div>
+</header>

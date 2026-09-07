@@ -1,0 +1,9 @@
+<div class="section3 px-18">
+  @for (images of data; track images.value) {
+    <div class="gallery-item">
+      <h3 class="bigvalue text-center">{{ images.value }}</h3>
+      <h4 class="smallvalue text-center mb-1">{{ images.value2 }}</h4>
+      <img [src]="images.authorImg" alt="image alternative"/>
+    </div>
+  }
+</div>

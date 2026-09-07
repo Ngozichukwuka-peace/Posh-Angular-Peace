@@ -1,0 +1,16 @@
+<section class="hero section">
+  <div class="container hero__inner">
+    <p class="hero__subtext">{{ subtext() }}</p>
+    <h1>
+      @for (segment of headlineSegments(); track $index) {
+        <span [class.hero__highlight]="segment.highlight">{{ segment.text }}</span>
+      }
+    </h1>
+    <p class="hero__subtext2">{{ midtext() }}</p>
+    <button type="button" class="btn btn-primary" (click)="onCtaClick()">
+      {{ ctaLabel() }}
+    </button>
+    <p class="hero__subtext3">{{ purchasetext() }}</p>
+    <img src="https://prium.github.io/Posh/v2.1.0/assets/images/showcase-01.jpg" alt="first-image">
+  </div>
+</section>

@@ -1,0 +1,6 @@
+<app-navbar (menuToggled)="onMobileMenuToggled($event)"></app-navbar>
+<main [class.menu-open]="mobileMenuOpen()">
+  <router-outlet></router-outlet>
+</main>
+
+<app-footer></app-footer>

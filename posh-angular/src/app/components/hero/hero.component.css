@@ -1,0 +1,41 @@
+.hero {
+  background: linear-gradient(180deg, var(--color-bg-alt), #fff);
+  text-align: center;
+}
+
+.hero__inner {
+  max-width: 1110px;
+}
+
+.hero h1 {
+  font-size: 45px;
+  font-weight: lighter;
+}
+
+.hero__highlight {
+  color: #007aff;
+}
+
+.hero button {
+  background-color: #007aff;
+  border-radius: 4px;
+  font-size: smaller;
+  margin-top: 50px;
+}
+
+.hero__subtext {
+  font-size: 1.15rem;
+  margin-bottom: 2em;
+}
+
+.hero__midtext {
+  color: gray;
+}
+
+.hero__purchasetext {
+  font-size: smaller;
+}
+
+.hero img {
+  width: 100%;
+}

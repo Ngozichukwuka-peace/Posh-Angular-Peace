@@ -1,0 +1,64 @@
+<section class="section" id="contact">
+  <div class="container contact">
+    <div class="section-title">
+      <h2>Get In Touch</h2>
+      <p>Have a question? Send a message and we'll get back to you.</p>
+    </div>
+
+    @if (!submitted()) {
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" formControlName="name" />
+          @if (name.invalid && name.touched) {
+            <span class="error">
+              @if (name.hasError('required') || name.hasError('blank')) {
+                Please enter your name.
+              }
+            </span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" />
+          @if (email.invalid && email.touched) {
+            <span class="error">
+              @if (email.hasError('required')) {
+                Email is required.
+              } @else if (email.hasError('invalidEmail')) {
+                Please enter a valid email address.
+              }
+            </span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" formControlName="message"></textarea>
+          @if (message.invalid && message.touched) {
+            <span class="error">
+              @if (message.hasError('required') || message.hasError('blank')) {
+                Please write a short message.
+              } @else if (message.hasError('minlength')) {
+                Message should be at least 10 characters.
+              }
+            </span>
+          }
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">
+          Send Message
+        </button>
+      </form>
+    } @else {
+      <div class="thanks">
+        <h3>Thanks! Your message is on its way! </h3>
+        <p>We'll get back to you as soon as we can.</p>
+        <button type="button" class="btn btn-primary" (click)="sendAnother()">
+          Send another message
+        </button>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,11 @@
+.footer {
+  background-color: #0d141c;
+  color: grey;
+  font-size: smaller;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 120px;
+}

@@ -1,0 +1,18 @@
+.about {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about code {
+  background: var(--color-bg-alt);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.about .btn {
+  background-color: #007aff;
+  border-radius: 4px;
+  font-size: smaller;
+  margin-top: 50px;
+}
